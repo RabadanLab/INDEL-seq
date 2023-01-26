@@ -34,3 +34,8 @@ def run_needle(ID):
 with Pool(N) as p:
     p.map(run_needle, IDs)
 
+def run_gzip(ID):
+    subprocess.call('gzip results/' + ID + '.sam',shell=True)
+with Pool(N) as p:
+    p.map(run_gzip, IDs)
+
